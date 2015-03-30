@@ -21,6 +21,22 @@ Depends on:
   * [PythonRouge](https://github.com/miguelbalmeida/PythonROUGE)
   * Perl and the XML.DOM library
 
+Comparison of different measures
+-----------------------
+
+We used the Flickr8K data set, expert human judgements, tokenized the text with Stanford
+CoreNLP PennTreebank Tokenizer with COCO custom punctuation removals. Note, this table
+is slightly different from our ACL paper because here we tokenized the text and include
+the recently proposed [CIDEr measure](http://arxiv.org/abs/1411.5726).
+
+|           | Spearman's rho |
+| --------- | -------------- |
+| CIDEr     | 0.581          |
+| Meteor    | 0.560          |
+| BLEU4     | 0.459          |
+| ROUGE-SU4 | 0.440          |
+| TER       | -0.290         |
+
 Assumptions
 -----------
 
@@ -74,22 +90,6 @@ appendNewScores.py $newScoresFile $label $data/sentLevel/sys1.opt1`, where
 
 3. **Calculate the correlations and plot the score distributions**. Run
 `Rscript calculateCorrelation.R $scoresFile $judgementsFile`.
-
-Comparison of different measures
------------------------
-
-We used the Flickr8K data set, expert human judgements, tokenized the text with Stanford
-CoreNLP PennTreebank Tokenizer with COCO custom punctuation removals. Note, this table
-is slightly different from our ACL paper because here we tokenized the text and include
-the recently proposed [CIDEr measure](http://arxiv.org/abs/1411.5726).
-
-|           | Spearman's rho |
-| --------- | -------------- |
-| CIDEr     | 0.581          |
-| Meteor    | 0.560          |
-| BLEU4     | 0.459          |
-| ROUGE-SU4 | 0.440          |
-| TER       | -0.290         |
 
 Visualisating the distribution of scores
 ----------------------------------------
