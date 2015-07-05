@@ -10,7 +10,7 @@ try:
   os.mkdir(outputdir)
 except OSError,e:
   if e.errno == 17:
-    continue # No need to recreate the directory
+    pass # No need to recreate the directory
 
 handle = open(inputfile)
 data = handle.readlines()
